@@ -41,6 +41,9 @@ r=1;
     else  
       if(a==1)
       r=0;
+      else
+        if(a==0)
+          r=0;
     
 
     if(r==1)
