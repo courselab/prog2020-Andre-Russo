@@ -26,7 +26,7 @@ int is_prime (int a)
   int i, p;
   
   p=1;
-  for(i=2; i<= a/2; i++)
+  for(i=2; i< a; i++)
     {
       if((a%i)==0)
         {
