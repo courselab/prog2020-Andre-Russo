@@ -49,35 +49,35 @@ int day_of_week (int day, int month)
 
   while(i<month-1)
   {
-    n=n+ m[i];
+    n=n+m[i];
     i++;
   }
-  n=n+ day;
+  n=n+day;
   switch(n%7)
   {
-    case 6:
-      return sat+tue;
-      break;
-    case 5:
-      return fri+tue;
-      break;
-    case 4:
-      return thu+tue;
-      break;
-    case 3:
-      return wed+tue;
+    case 0:
+      return tue;
+      break; 
+    case 1:
+      return wed;
       break;
     case 2:
-      return tue+tue;
+      return thu;
       break;
-    case 1:
-      return mon+tue;
+    case 3:
+      return fri;
       break;
-    case 0:
-      return sun+tue;
-      break; 
+    case 4:
+      return sat;
+      break;
+    case 5:
+      return sun;
+      break;
+    case 6:
+      return mon;
+      break;
     default:
-    return 0;
+     return 0;
       break;  
   }
 }
