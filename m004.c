@@ -27,11 +27,52 @@
    right before the spurious character (eg. truncate 110x001
    into 110); an empty string means zero. */
 
+int elevar(int z)
+{
+    int a,b;
+    b = 1;
+    if (z>0)
+      {
+        for (a=1; a<=z; a++)
+          {
+            b = b*2;
+          }
+      }
+
+    return b;
+}
+
 int decimal (char *b)
 {
-  
-  return 0;
+  int n, x, y, i;
+
+    char a[32];
+
+    y = 0;
+    n = strlen (b);
+    for (i=0; i<n; i++)
+    {
+      if ((b[i]!='1') && (b[i]!='0'))
+       {
+         break;
+        }
+      y += 1;
+    }
+
+    strncpy(a, b , y);
+    a[y + 1]='\0';
+
+    x = 0;
+    for(i=y-1; i>=0; i--)
+    {
+        if (a[i] == '1')
+       {
+          x = x + elevar(y - 1 - i);
+       } 
+    }
+    return x;
 }
+
 
 #define USAGE "m004 <string>\n"
 
