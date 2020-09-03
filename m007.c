@@ -21,14 +21,38 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX 256
 
 /* Count the number of letters in string s.*/
 
+int alfabeto (char a) 
+{
+   int count=0;
+   
+   if (a>='a' && a<='z')
+   {
+      count++;
+   }
+   if (a>='A' && a<='Z')
+   {
+      count++;
+   }
+   return count;
+}
+
 int lettercount (char *s)
 {
-  return 0;
+   int i, count;
+
+   count = 0;
+   for(i=0; i<=strlen(s); i++)
+   {
+      count= count+alfabeto(s[i]);
+   }
+   
+  return count;
 }
 
 

@@ -28,8 +28,29 @@
 
 int wordcount (char *filename)
 {
-  return 0;
+ 
+  int a, b, count;
+
+  b=0;
+  count=0;
+ FILE *arq = fopen (filename, "r");
+
+while (! feof(arq)) 
+ {
+  a=fgetc (arq);
+        
+  if ((a == 32) || (a == 13) || (a == 10))
+  { 
+    if (b != 10)  
+    {
+      count++ ;
+    }
+   }
+   b=a;
+  }
+return count;
 }
+
 
 /* Do not edit function main. */
 
